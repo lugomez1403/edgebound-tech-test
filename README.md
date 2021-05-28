@@ -1,3 +1,8 @@
-# CRUD with Nodejs, Express and Mongodb
-![](docs/screenshot.png)
+# CRUD Node js, express y mongodb
+
+Clonal el proyecto y realizar npm install
+
+realizar npm run dev para el ambiente de desarrollo
+
+
 

@@ -1,5 +1,6 @@
 const helpers = {};
 
+//Funcion helper para validar la autenticacion
 helpers.isAuthenticated = (req, res, next) =>{
     if (req.isAuthenticated()) {
         return next();

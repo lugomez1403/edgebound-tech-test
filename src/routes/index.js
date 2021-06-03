@@ -1,10 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
+// Ruta del index
 router.get('/', (req, res) => {
     res.render('index');
 });
 
+// Ruta de about
 router.get('/about', (req, res) => {
     res.render('about');
 });

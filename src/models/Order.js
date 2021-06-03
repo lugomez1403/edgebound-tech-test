@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const { Schema }  = mongoose;
 
+
+// Schema para las ordenes mongodb usamos el schema de mongose
 const OrderSchema =  new Schema ({
         title: {
           type: String,
@@ -14,6 +16,12 @@ const OrderSchema =  new Schema ({
           type : String,
           'default': 'PROCESS',
           required : true
+        },
+        trackingUrls:{
+          type: String
+        },
+        trackingCodes:{
+          type: String
         },
         date: {
             type: Date,

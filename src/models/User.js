@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const { Schema }  = mongoose;
 const bcrypt = require('bcryptjs');
 
+// Schema para gestionar los usuarios
 const UserSchema =  new Schema ({
     user: {
       type: String,
@@ -14,10 +15,11 @@ const UserSchema =  new Schema ({
     date: {
         type: Date,
         default: Date.now
+    },
+    rol: {
+      type: String,
+      required: true,
     }
-  },
-  {
-    timestamps: true,
   }
 );
 

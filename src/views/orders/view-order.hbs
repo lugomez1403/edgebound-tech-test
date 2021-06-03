@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3 col-md-2"></div>
+        <div class="col-lg-6 col-md-8 login-box">
+            <div class="col-lg-12 login-title">
+                Details
+            </div>
+
+            <div class="col-lg-12 card-form">
+                <div class="col-lg-12 card-form">
+                    <form>
+                    <input type="hidden" name="_method" value="PUT">
+                        <div class="form-group">
+                            <label class="form-control-label">ORDER TITLE</label>
+                            <h3 class="text-detail">{{ order.title }}</h3>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label">ORDER DESCRIPTION</label>
+                            <h3 class="text-detail">{{ order.description }}</h3>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label">STATUS</label>
+                            <h3 class="text-detail">{{ order.status }}</h3>
+                        </div>
+                            {{#compare order.status '==' 'SHIPPING'}}
+                                <div class="form-group">
+                                    <label class="form-control-label">Tracking Urls</label>
+                                    <h3 class="text-detail">{{ order.trackingUrls }}</h3>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-control-label">Tracking Codes</label>
+                                    <h3 class="text-detail">{{ order.trackingCodes }}</h3>
+                                </div>
+                            {{/compare}}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

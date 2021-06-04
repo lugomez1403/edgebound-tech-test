@@ -70,8 +70,15 @@ router.post('/users/signup', async (req, res) => {
 
 // loguot del sistema
 router.get('/users/logout', (req, res) => {
-    req.logout();
-    res.redirect('/');
+    try {
+        req.logout();
+        req.flash("success_msg", "You are logged out now.");
+        res.redirect("/users/signin");
+    } catch (e) {
+        return res.status(500).json({
+            error: e.message
+        });
+    }
 });
 
 module.exports = router;

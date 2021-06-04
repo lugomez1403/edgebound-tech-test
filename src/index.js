@@ -16,7 +16,7 @@ require('./config/passport');
 app.set('port',process.env.PORT || 5000);
 app.set('views', path.join(__dirname, 'views'));
 app.engine('.hbs', exphbs({
-    helpers: {
+    helpers: {//helper para comparaciones
           compare: function (v1, operator, v2, options) { 
             switch (operator) {
               case '==':
@@ -49,10 +49,6 @@ app.engine('.hbs', exphbs({
     partialsDir: path.join(app.get('views'), 'partials'),
     extname: '.hbs',
 }));
-
-//helper para conficionales
-
-
 
 app.set('view engine', '.hbs');
 

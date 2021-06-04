@@ -97,8 +97,8 @@ router.put('/orders/change-status/:id', isAuthenticated, async (req, res) => {
         trackingCodes: ''
     };
     if( status == 'SHIPPING'){
-        tracking['trackingUrls'] = '/orders/view/'+ req.params.id;
-        tracking['trackingCodes'] = '1,2,3,4';
+        tracking['trackingUrls'] = '/orders/view-order/'+ req.params.id;
+        tracking['trackingCodes'] = '1,2';
     }
     const trackingUrls = tracking.trackingUrls;
     const trackingCodes = tracking.trackingCodes;

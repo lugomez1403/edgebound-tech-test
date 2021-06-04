@@ -6,11 +6,7 @@
         <td>Title</td>
         <td>Description</td>
         <td>Status</td>
-        {{#each user}}
-            {{#compare rol '==' 'admin'}}
-                <td>Actions</td>
-            {{/compare}}
-        {{/each}}
+        <td>Actions</td>
         
     </tr>
     {{#each orders}}
@@ -19,18 +15,22 @@
         <th>{{description}}</th>
         <th>{{status}}</th>
                 <th>
-                    {{#compare status '!=' 'CLOSED'}}
-                        {{#compare status '!=' 'CANCELLED'}}
-                        {{!-- Open modal change status --}}
-                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit order">
-                        <a href="/orders/change-status/{{_id}}"><i class="fas fas fa-exchange-alt"></i></a>
-                    </button>
-                    {{!-- edit button --}}
-                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit order">
-                        <a href="/orders/edit/{{_id}}"><i class="fas fa-edit"></i></a>
-                    </button>
+                    {{#each ../user}}
+                        {{#compare rol '==' 'admin'}}
+                                {{#compare ../status '!=' 'CLOSED'}}
+                                    {{#compare ../status '!=' 'CANCELLED'}}
+                                        {{!-- Open modal change status --}}
+                                        <button type="button" class="btn btn-outline-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit order">
+                                            <a href="/orders/change-status/{{../_id}}"><i class="fas fas fa-exchange-alt"></i></a>
+                                        </button>
+                                        {{!-- edit button --}}
+                                        <button type="button" class="btn btn-outline-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit order">
+                                            <a href="/orders/edit/{{../_id}}"><i class="fas fa-edit"></i></a>
+                                        </button>
+                                    {{/compare}}
+                                {{/compare}}
                         {{/compare}}
-                    {{/compare}}
+                    {{/each}}
                     <button type="button" class="btn btn-outline-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="view detail">
                         <a href="/orders/view-order/{{_id}}"><i class="fas fa-eye"></i></a>
                     </button>

@@ -31,3 +31,16 @@ Ir a la página de signup para registrar nuevos usuarios:
 INGRESAR AL SISTEMA
 
 Ir a la página de signin para ingresar al sistema con las credenciales de los usuarios creados
+
+
+ACCIONES
+
+Una vez dentro del sistema:
+
+Si es admin:
+    * Podra añadir ordenes dentro de la pestaña orders/ add orders
+    * Podra editar la ordenes
+    * Podra editar el status
+
+Si es user:
+    * Podra ver las ordenes y sus detalles
